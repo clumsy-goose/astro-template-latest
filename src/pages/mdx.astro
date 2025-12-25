@@ -4,6 +4,9 @@ import { getEntry, render } from 'astro:content';
 
 export const prerender = true;
 
+// Set cache headers
+Astro.response.headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400, stale-if-error');
+
 // Get MDX content
 const mdxEntry = await getEntry('examples', 'mdx');
 if (!mdxEntry) throw new Error('mdx entry not found');

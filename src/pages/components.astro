@@ -4,6 +4,9 @@ import ReactCard from "../components/ReactCard";
 import VueCard from "../components/VueCard.vue";
 import SvelteCard from "../components/SvelteCard.svelte";
 
+// Set cache headers (shorter cache for dynamic content)
+Astro.response.headers.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=600, stale-if-error');
+
 // Get server-side render time
 const renderTime = new Date();
 const formattedTime = renderTime.toLocaleString("en-US", {
