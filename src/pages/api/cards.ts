@@ -27,7 +27,8 @@ export const GET: APIRoute = () => {
   return new Response(JSON.stringify(cards), {
     status: 200,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Cache-Control': 'max-age=0, s-maxage=0, stale-while-revalidate, stale-while-revalidate=1000'
     }
   });
 };
