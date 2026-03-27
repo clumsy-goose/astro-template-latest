@@ -1,14 +1,18 @@
 {
     "nodeFunctionsConfig": {
-        "abc":1,
-    "maxDuration": 113
+        "maxDuration": 113
     },
     "cloudFunctions": {
         "python": {
             "maxDuration": 60
         },
         "nodejs": {
-            "maxDuration": 120
+            "externalNodeModules": [
+                "svg-captcha"
+            ], 
+            "includeFiles": [
+                "assets/**"
+            ]
         }
     }
 }
